@@ -1,7 +1,5 @@
 // API client for Aegis PII Scanner FastAPI backend — with JWT auth support
-
-const DEFAULT_API_URL = "http://localhost:8000";
-
+const DEFAULT_API_URL = import.meta.env.VITE_API_URL;
 export function getApiUrl(): string {
   return localStorage.getItem("aegis_api_url") || DEFAULT_API_URL;
 }
