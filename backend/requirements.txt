@@ -1,32 +1,38 @@
 # ── Core framework ────────────────────────────────────────────
-streamlit>=1.35.0
 fastapi>=0.111.0
 uvicorn[standard]>=0.30.0
+
+# ── Auth ──────────────────────────────────────────────────────
+bcrypt>=4.1.0
+python-jose[cryptography]>=3.3.0
+
+# ── Database ──────────────────────────────────────────────────
+motor>=3.4.0              # Async MongoDB driver
+pymongo>=4.7.0
+python-dotenv>=1.0.0
 
 # ── HTTP & scraping ───────────────────────────────────────────
 requests>=2.32.0
 beautifulsoup4>=4.12.0
-python-dotenv>=1.0.0
+
+# ── Telegram ──────────────────────────────────────────────────
+telethon>=1.35.0
 
 # ── PII detection ─────────────────────────────────────────────
 presidio-analyzer>=2.2.354
 presidio-anonymizer>=2.2.354
 spacy>=3.7.0
-# Download the spaCy English model after install:
-#   python -m spacy download en_core_web_lg
+# After install, run: python -m spacy download en_core_web_sm
 
-# ── NLP disambiguation ────────────────────────────────────────
+# ── NLP disambiguation (transformer filter) ───────────────────
 transformers>=4.41.0
-torch>=2.3.0          # CPU-only is fine for inference
-# Optional: accelerate for faster HuggingFace inference
-# accelerate>=0.30.0
+torch>=2.3.0              # CPU-only is fine for inference
 
 # ── OCR ───────────────────────────────────────────────────────
 easyocr>=1.7.1
-pymupdf>=1.24.0       # For PDF rasterization (fitz)
+Pillow>=10.3.0            # PIL — used by OCREngine
+numpy>=1.26.0             # Used by EasyOCR image conversion
+pymupdf>=1.24.0           # PDF rasterization (fitz)
 
-# ── Database ──────────────────────────────────────────────────
-sqlalchemy>=2.0.30
-
-# ── Data & display ────────────────────────────────────────────
-pandas>=2.2.0
+# ── BSON / serialization ──────────────────────────────────────
+bson>=0.5.10              # ObjectId handling in api.py
