@@ -1,4 +1,4 @@
---only-binary=:all:
+# Python >= 3.10 required (3.11 recommended)
 
 # ── Core framework ────────────────────────────────────────────
 fastapi>=0.111.0
@@ -10,7 +10,7 @@ python-jose[cryptography]>=3.3.0
 
 # ── Database ──────────────────────────────────────────────────
 motor>=3.4.0
-pymongo>=4.7.0
+pymongo>=4.7.0            # ships bson (ObjectId) — no separate bson needed
 python-dotenv>=1.0.0
 
 # ── HTTP & scraping ───────────────────────────────────────────
@@ -36,4 +36,3 @@ easyocr>=1.7.1
 Pillow>=10.3.0
 numpy>=1.26.0
 pymupdf>=1.24.0
-
